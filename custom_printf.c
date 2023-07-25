@@ -230,3 +230,16 @@ int _printf(const char *format, ...)
                 break;
             }
         }
+        else
+        {
+            count += write(1, format, 1);
+        }
+
+        format++;
+    }
+
+    free(buffer);
+    va_end(args);
+
+    return count;
+}
